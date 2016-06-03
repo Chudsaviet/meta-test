@@ -1,6 +1,7 @@
 package org.tkorostelev.meta_point02;
 
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.log4j.Logger;
@@ -9,7 +10,7 @@ import java.io.IOException;
 import java.util.stream.Stream;
 
 public class MetaPoint02Mapper
-        extends Mapper<LongWritable, Text, LongWritable, Text> {
+        extends Mapper<LongWritable, Text, NullWritable, Text> {
 
     private int[] key_columns_positions;
     private int[] unpivot_columns_positions;
@@ -56,7 +57,7 @@ public class MetaPoint02Mapper
         for(int position : unpivot_columns_positions) {
             StringBuilder output = new StringBuilder(key_columns);
             output.append(line_split[position]);
-            context.write(key, new Text(output.toString()));
+            context.write(NullWritable.get(), new Text(output.toString()));
         }
 
     }

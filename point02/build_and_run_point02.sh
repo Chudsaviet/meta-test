@@ -14,4 +14,4 @@ hdfs dfs -copyFromLocal ../input1.csv /apps/meta_point02/input1.csv || true
 
 echo "Running job"
 time yarn jar target/meta-point02-1.0.jar org.tkorostelev.meta_point02.MetaPoint02 hdfs:///apps/meta_point02/input1.csv col1,col2,col3 hdfs:///apps/meta_point02/result
-hdfs dfs -text /apps/meta_point02/result/part-m-00000 | head -10
+hdfs dfs -text /apps/meta_point02/result/part-m-* | head -10

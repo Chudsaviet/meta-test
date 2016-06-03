@@ -65,3 +65,5 @@ target/
 .idea/
 
 out*.csv
+
+input_big*.csv
