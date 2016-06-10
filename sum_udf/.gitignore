@@ -1,0 +1,25 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.classpath
+.project
+.settings
+target
+
+# gedit temp files
+*~
+
+#InteliJ Idea project
+.idea/
+*.iml
+
+#hadoop output files
+part*
+
+#stderr and stdout files
+*.stderr
+*.stdout

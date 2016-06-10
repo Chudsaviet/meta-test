@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.tkorostelev</groupId>
+    <artifactId>sum_udf</artifactId>
+    <version>1.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    <repositories>
+        <repository>
+            <id>hortonworks.com</id>
+            <url>http://repo.hortonworks.com/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+    <build>
+    </build>
+    <name>sum_udf</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-common</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+        <!-- We need calciite 1.0.0 because of Hive 0.14.0 dependency issue -->
+        <dependency>
+               <groupId>org.apache.calcite</groupId>
+               <artifactId>calcite-core</artifactId>
+               <version>1.0.0-incubating</version>
+       </dependency>
+       <dependency>
+               <groupId>org.apache.calcite</groupId>
+               <artifactId>calcite-avatica</artifactId>
+               <version>1.0.0-incubating</version>
+       </dependency>
+    </dependencies>
+</project>
